@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#7BAFD4">
+  <meta name="description" content="L.L. Thurstone’s 75th anniversary, Saturday, June 19, 2027, 4:30–9:30 p.m., at Reeves Auditorium, North Carolina Botanical Garden.">
+  <title>Photos · L.L. Thurstone 75th anniversary</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="config.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body data-page="photos" data-page-title="Photos">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner"><a class="brand" href="index.html" aria-label="Anniversary homepage"><strong data-config="labName">L.L. Thurstone</strong><span>75TH ANNIVERSARY</span></a><p class="header-date" data-date>Saturday, June 19, 2027</p></div>
+    <nav id="navigation" class="wrap page-tabs" aria-label="Anniversary pages"><a href="index.html">Home Page</a><a href="rsvp.html">RSVP</a><a href="guests.html">Who’s coming</a><a href="schedule.html">Schedule</a><a href="hotels.html">Hotels</a><a href="venue.html">Venue &amp; Parking</a><a href="photos.html" aria-current="page">Photos</a></nav>
+  </header>
+  <main id="main"><section class="page-content wrap" aria-labelledby="page-title"><div class="page-intro section-heading"><div><h1 class="page-title" id="page-title">Photos</h1><p>Share photos from your time in the lab and browse memories from others.</p></div><button class="button upload-open">Upload a photo <span aria-hidden="true">＋</span></button></div><p id="photo-folder-option" class="folder-option" hidden>Prefer a shared folder? <a id="photo-folder-link" class="text-link" target="_blank" rel="noopener noreferrer">Upload to the shared folder ↗</a></p>      <div id="photo-grid" class="photo-grid"></div>
+      <div id="photo-empty" class="empty-state photo-empty"><h3>No photos yet.</h3><p>Share the first photo from your time in the lab.</p></div>
+      <p id="photo-error" class="error-message" role="alert" hidden></p>
+      <p id="photo-mode-note" class="field-note photo-mode-note">Local preview: photos stay in this browser.</p></section></main>
+  <footer><div class="wrap"><div class="footer-main"><span><strong data-config="labName">L.L. Thurstone</strong> · 75th anniversary</span><span id="contact-text" hidden></span></div><div class="preview-notice" id="preview-notice"><span><strong>Local preview</strong> · RSVPs and photos stay in this browser.</span><button class="text-link" id="export-local">Export preview data ↓</button></div></div></footer>
+  <dialog id="upload-dialog" aria-labelledby="upload-title"><button class="dialog-close" data-close="upload-dialog" aria-label="Close photo upload">×</button><h2 id="upload-title">Share a photo</h2><form id="upload-form"><label class="drop-zone" id="drop-zone"><input id="photo-file" type="file" accept="image/jpeg,image/png,image/webp" required><span id="drop-prompt"><span class="upload-symbol" aria-hidden="true">↥</span><strong>Choose a photo or drop it here</strong><small>JPEG, PNG, or WebP · up to 10 MB</small></span><img id="upload-preview" alt="Your selected photograph" hidden></label><div class="form-row"><label>Your name *<input name="author" required maxlength="100" autocomplete="name" placeholder="Photo shared by"></label><label>Year <span class="optional">(optional)</span><input name="year" type="number" min="1900" max="2100" placeholder="e.g. 1998"></label></div><label>The story behind it *<textarea name="caption" required maxlength="500" rows="3" placeholder="Who’s in the photo? Where were you? What do you remember?"></textarea></label><label class="checkbox-line consent-line"><input name="photoConsent" type="checkbox" required><span>I have permission to share this photo and agree to its publication in the photo gallery.</span></label><div class="captcha-slot" id="photo-captcha"></div><p id="upload-mode-note" class="field-note">Local preview: this photo will be saved in your browser only.</p><p id="upload-error" class="error-message" role="alert" hidden></p><button class="button submit-button" id="upload-submit" type="submit">Share photo <span aria-hidden="true">↗</span></button></form></dialog>
+  <dialog id="photo-dialog" class="photo-dialog" aria-labelledby="lightbox-caption"><button class="dialog-close" data-close="photo-dialog" aria-label="Close photo">×</button><img id="lightbox-image" alt=""><div class="lightbox-details"><p id="lightbox-credit" class="eyebrow"></p><h3 id="lightbox-caption"></h3><p id="lightbox-pending" class="field-note" hidden>Awaiting organizer approval. Only you can see this photo for now.</p><button id="delete-photo" class="text-link" hidden>Remove my photo</button><p id="delete-error" class="error-message" role="alert" hidden></p></div></dialog>
+
+  <div id="toast" class="toast" role="status" hidden></div>
+  <noscript><p class="noscript">JavaScript is needed to RSVP, load the guest list, and share photos. Event information and page links remain available.</p></noscript>
+</body>
+</html>
