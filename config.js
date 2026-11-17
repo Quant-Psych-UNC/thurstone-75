@@ -27,7 +27,7 @@ window.EVENT_CONFIG = {
     { title: 'Event date and venue confirmed', text: 'Join us Saturday, June 19, 2027, from 4:30–9:30 p.m. at Reeves Auditorium. The detailed program and hotel information will be added when available.' }
   ],
   // Paste the published responder link, NOT the Google Form editor or response sheet.
-  rsvpFormUrl: '',
+  rsvpFormUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSeh1LXnFf64G-BS_mdx9umVR2564xm0HFfNUNLVoSEiLUZZtA/viewform?usp=dialog',
   // Paste a Dropbox FILE REQUEST link: https://www.dropbox.com/request/...
   dropboxRequestUrl: '',
   // Optional: view-only shared link to a SEPARATE folder of approved photos.
