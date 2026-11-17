@@ -9,6 +9,7 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
   <script src="config.js" defer></script>
+  <script src="public-guests.js" defer></script>
   <script src="app.js" defer></script>
 </head>
 <body data-page="guests" data-page-title="Who’s coming">
@@ -17,15 +18,22 @@
     <div class="wrap header-inner"><a class="brand" href="index.html" aria-label="Anniversary homepage"><strong data-config="labName">L.L. Thurstone</strong><span>75TH ANNIVERSARY</span></a><p class="header-date" data-date>Saturday, June 19, 2027</p></div>
     <nav id="navigation" class="wrap page-tabs" aria-label="Anniversary pages"><a href="index.html">Home Page</a><a href="rsvp.html">RSVP</a><a href="guests.html" aria-current="page">Who’s coming</a><a href="schedule.html">Schedule</a><a href="hotels.html">Hotels</a><a href="venue.html">Venue &amp; Parking</a><a href="photos.html">Photos</a></nav>
   </header>
-  <main id="main"><section class="page-content wrap" aria-labelledby="page-title"><div class="page-intro section-heading"><div><h1 class="page-title" id="page-title">Who’s coming</h1><p>Attending guests and their +1 status. Emails and private requests are never displayed.</p></div><a class="button button-outline" href="rsvp.html">RSVP →</a></div>        <div class="guest-tools"><div class="filter-group" role="group" aria-label="Filter guest list"><button class="filter active" data-filter="all" aria-pressed="true">Everyone</button><button class="filter" data-filter="Alumni" aria-pressed="false">Alumni</button><button class="filter" data-filter="Current member" aria-pressed="false">Current members</button><button class="filter" data-filter="Friend / colleague" aria-pressed="false">Friends</button></div><label class="search-box"><span class="sr-only">Search guests by name or years in the lab</span><input id="guest-search" type="search" placeholder="Search guests…" maxlength="100"></label></div>
-        <p id="guest-count" class="list-count" aria-live="polite">Loading the guest list…</p>
-        <div id="guest-list" class="guest-list"></div>
-        <div id="guest-empty" class="empty-state" hidden><h3>No public RSVPs yet.</h3><p>RSVP and opt in to appear here.</p></div>
-        <div id="guest-no-results" class="empty-state" hidden><h3>No matching guests.</h3><button id="clear-search" class="text-link">Clear search & filters</button></div>
-        <p id="guest-error" class="error-message" role="alert" hidden></p><p class="field-note guest-privacy">Only attending guests with public-list permission appear here.</p></section></main>
-  <footer><div class="wrap"><div class="footer-main"><span><strong data-config="labName">L.L. Thurstone</strong> · 75th anniversary</span><span id="contact-text" hidden></span></div><div class="preview-notice" id="preview-notice"><span><strong>Local preview</strong> · RSVPs and photos stay in this browser.</span><button class="text-link" id="export-local">Export preview data ↓</button></div></div></footer>
-
-  <div id="toast" class="toast" role="status" hidden></div>
-  <noscript><p class="noscript">JavaScript is needed to RSVP, load the guest list, and share photos. Event information and page links remain available.</p></noscript>
+  <main id="main">
+    <section class="page-content wrap" aria-labelledby="page-title">
+      <div class="page-intro section-heading"><div><h1 id="page-title">Who’s coming</h1><p>Reconnect with alumni, current members, and friends.</p></div><a class="button button-outline" href="rsvp.html">RSVP →</a></div>
+      <div id="guest-tools" class="guest-tools" hidden>
+        <div class="filter-group" role="group" aria-label="Filter guest list"><button class="filter active" data-filter="all" aria-pressed="true">Everyone</button><button class="filter" data-filter="Alumni" aria-pressed="false">Alumni</button><button class="filter" data-filter="Current member" aria-pressed="false">Current members</button><button class="filter" data-filter="Friend / colleague" aria-pressed="false">Friends</button></div>
+        <label class="search-box"><span class="sr-only">Search guests by name or years in the lab</span><input id="guest-search" type="search" placeholder="Search guests…" maxlength="100"></label>
+      </div>
+      <p id="guest-count" class="list-count" aria-live="polite">Loading the guest list…</p>
+      <div id="guest-list" class="guest-list"></div>
+      <div id="guest-empty" class="empty-state" hidden><h2>See you at the celebration.</h2><p>Guest names will appear here soon.</p></div>
+      <div id="guest-no-results" class="empty-state" hidden><h2>No matching guests.</h2><button id="clear-search" class="text-link">Clear search &amp; filters</button></div>
+      <p id="guest-error" class="error-message" role="alert" hidden></p>
+      <p id="guest-updated" class="guest-privacy" hidden></p>
+    </section>
+  </main>
+  <footer><div class="wrap"><div class="footer-main"><span><strong data-config="labName">L.L. Thurstone</strong> · 75th anniversary</span><span id="contact-text" hidden></span></div></div></footer>
+  <noscript><p class="noscript">Please enable JavaScript to load the RSVP and photo links and the public guest list. Event information and navigation remain available.</p></noscript>
 </body>
 </html>

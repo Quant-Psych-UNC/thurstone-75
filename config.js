@@ -26,15 +26,13 @@ window.EVENT_CONFIG = {
   updates: [
     { title: 'Event date and venue confirmed', text: 'Join us Saturday, June 19, 2027, from 4:30–9:30 p.m. at Reeves Auditorium. The detailed program and hotel information will be added when available.' }
   ],
-  // Optional: add a Dropbox file-request or shared-folder URL as another upload route.
-  photoFolderUrl: '',
-  // REQUIRED BEFORE INVITATIONS: enter your organizer contact email.
+  // Paste the published responder link, NOT the Google Form editor or response sheet.
+  rsvpFormUrl: '',
+  // Paste a Dropbox FILE REQUEST link: https://www.dropbox.com/request/...
+  dropboxRequestUrl: '',
+  // Optional: view-only shared link to a SEPARATE folder of approved photos.
+  photoGalleryUrl: '',
+  // Public organizer contact address; never put a guest's email here.
   contactEmail: '',
-  rsvpDeadline: '',
-  // Upload version: online mode. Complete README.md before collecting real RSVPs.
-  dataMode: 'github',
-  // REQUIRED: your production Worker HTTPS URL, with no path. NEVER a token.
-  apiUrl: '',
-  // REQUIRED: public Turnstile site key. Keep its secret in Cloudflare.
-  turnstileSiteKey: ''
+  rsvpDeadline: ''
 };
