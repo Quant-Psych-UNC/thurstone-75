@@ -50,7 +50,7 @@ input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 2px
 .brand strong { font-family: var(--serif); font-size: var(--text-heading); font-weight: 400; line-height: 1.3; }
 .brand > span { font-size: var(--text-body); letter-spacing: .04em; }
 .header-date { font-size: var(--text-body); text-align: right; }
-.page-tabs { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px; padding-bottom: 20px; }
+.page-tabs { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 6px; padding-bottom: 20px; }
 .page-tabs a { display: flex; align-items: center; justify-content: center; min-height: 64px; padding: 12px 8px; border: 1px solid var(--pale); border-bottom: 3px solid var(--pale); border-radius: 4px 4px 0 0; background: var(--pale); color: var(--navy); text-align: center; font-size: var(--text-body); font-weight: 400; line-height: 1.3; }
 .page-tabs a:hover { border-bottom-color: var(--navy); }
 .page-tabs a[aria-current="page"] { background: var(--blue); border-color: var(--blue); border-bottom-color: var(--navy); font-weight: 600; }
@@ -66,7 +66,11 @@ body[data-page="information"] main { background: var(--pale); }
 .event-details h2 { margin-bottom: 8px; font-weight: 400; }
 .event-details small { display: block; margin-top: 8px; }
 .venue-links { display: flex; align-items: center; flex-wrap: wrap; gap: 16px 24px; margin-top: 16px; }
-.information-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 20px; margin-top: 32px; }
+.information-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 20px; margin-top: 24px; }
+.information-actions .button { min-width: 112px; background: var(--navy); color: var(--white); }
+.information-actions .button:hover { background: var(--blue); color: var(--navy); }
+.information-actions .text-link { display: inline-flex; align-items: center; min-height: 44px; }
+#deadline-note { margin-top: 12px; }
 .overview-note { margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--blue); }
 .overview-note a { text-decoration: underline; text-underline-offset: 4px; }
 
@@ -82,11 +86,6 @@ body[data-page="information"] main { background: var(--pale); }
 .updates-panel, .parking-panel, .forthcoming-panel { padding: 28px; background: var(--pale); border: 1px solid var(--pale); border-radius: 4px; }
 
 /* RSVP and form controls */
-.rsvp-layout { display: grid; grid-template-columns: .75fr 1.25fr; align-items: start; gap: 48px; }
-.rsvp-intro h2 { margin-bottom: 20px; }
-.rsvp-intro p { margin-bottom: 20px; }
-.rsvp-intro > .text-link { display: inline-block; margin-bottom: 20px; }
-.rsvp-intro .edit-note { margin-bottom: 0; }
 .rsvp-card { padding: 28px; border: 1px solid var(--blue); border-radius: 4px; background: var(--white); min-width: 0; }
 .service-card > p { margin-top: 16px; }
 .service-card > .button { margin-top: 24px; }
@@ -153,17 +152,16 @@ footer { padding-block: 28px; border-top: 1px solid var(--pale); }
 
 /* Responsive layout; no additional font sizes or colors. */
 @media (max-width: 1000px) {
-  .page-tabs { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-  .rsvp-layout, .details-layout { gap: 32px; }
+  .page-tabs { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .details-layout { gap: 32px; }
   .rsvp-card, .updates-panel, .parking-panel { padding: 24px; }
   .guest-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .venue-facts > div { grid-template-columns: 110px minmax(0, 1fr); gap: 16px; }
 }
 @media (max-width: 760px) {
-  .rsvp-layout, .details-layout, .photo-actions { grid-template-columns: 1fr; }
+  .details-layout, .photo-actions { grid-template-columns: 1fr; }
   .event-details { gap: 28px; }
   .event-details > div + div { padding-left: 28px; }
-  .rsvp-intro { max-width: 640px; }
   .guest-tools { align-items: stretch; }
   .search-box { max-width: none; }
 }
@@ -171,9 +169,14 @@ footer { padding-block: 28px; border-top: 1px solid var(--pale); }
   .wrap { width: calc(100% - 40px); }
   .header-inner { flex-direction: column; align-items: flex-start; gap: 8px; padding-block: 20px; }
   .header-date { text-align: left; }
-  .page-tabs { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
   .page-tabs a { padding: 10px 6px; }
   .information-section, .page-content { padding-block: 36px 44px; }
+  body[data-page="information"] .header-inner { min-height: auto; padding-block: 12px; }
+  body[data-page="information"] .page-tabs { padding-bottom: 12px; }
+  body[data-page="information"] .page-tabs a { min-height: 44px; padding: 4px 6px; }
+  .information-section { padding-top: 24px; }
+  .hero-lab-name { margin-bottom: 8px; }
+  .information-actions { margin-top: 16px; }
   .hero-description { margin-top: 20px; }
   .event-details { grid-template-columns: 1fr; gap: 28px; margin-top: 32px; padding-top: 24px; }
   .event-details > div + div { border: 0; padding-left: 0; }

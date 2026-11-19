@@ -4,7 +4,7 @@
   const $ = selector => document.querySelector(selector);
   const $$ = selector => [...document.querySelectorAll(selector)];
   const page = document.body.dataset.page || 'information';
-  const legacyPage = { '#rsvp': 'rsvp.html', '#guests': 'guests.html', '#memories': 'photos.html' }[location.hash];
+  const legacyPage = { '#guests': 'guests.html', '#memories': 'photos.html' }[location.hash];
   if (page === 'information' && legacyPage) {
     location.replace(legacyPage);
     return;
@@ -39,7 +39,37 @@
     link.hidden = !url;
     if (url) link.href = url;
     else link.removeAttribute('href');
-    if (pendingId) $(pendingId).hidden = Boolean(url);
+    const pending = pendingId && $(pendingId);
+    if (pending) pending.hidden = Boolean(url);
+  }
+
+  function initCountdown() {
+    const countdown = $('#event-countdown');
+    if (!countdown || !/^\d{4}$/.test(config.year)) return;
+
+    // Read the same event date that appears in the header.
+    const date = /(?:^|,\s*)([A-Za-z]+)\s+(\d{1,2})$/.exec(config.dateLabel?.trim());
+    if (!date) return;
+    const months = 'January February March April May June July August September October November December'.split(' ');
+    const month = months.indexOf(date[1]);
+    const day = Number(date[2]);
+    const eventDay = Date.UTC(Number(config.year), month, day);
+    if (month < 0 || new Date(eventDay).getUTCDate() !== day) return;
+
+    const easternDate = new Intl.DateTimeFormat('en-US', {
+      timeZone: 'America/New_York', year: 'numeric', month: 'numeric', day: 'numeric'
+    });
+    function updateCountdown() {
+      const today = Object.fromEntries(easternDate.formatToParts(new Date()).map(part => [part.type, part.value]));
+      // Subtract calendar dates so daylight-saving changes never shift the count.
+      const daysLeft = (eventDay - Date.UTC(today.year, today.month - 1, today.day)) / 86_400_000;
+      countdown.hidden = daysLeft < 0;
+      if (daysLeft < 0) return;
+      countdown.textContent = daysLeft === 0 ? 'Today’s the day' : `${daysLeft} ${daysLeft === 1 ? 'day' : 'days'} to go`;
+    }
+
+    updateCountdown();
+    if (!countdown.hidden) setInterval(updateCountdown, 60_000);
   }
 
   function applyConfig() {
@@ -141,6 +171,12 @@
     render();
   }
 
+  if (page === 'rsvp-redirect') {
+    location.replace(publicUrl(config.rsvpFormUrl, 'rsvp') || 'index.html#rsvp');
+    return;
+  }
+
   applyConfig();
+  initCountdown();
   initGuests();
 })();

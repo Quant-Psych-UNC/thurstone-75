@@ -14,15 +14,26 @@
 <body data-page="information" data-page-title="Home Page">
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
-    <div class="wrap header-inner"><a class="brand" href="index.html" aria-label="Anniversary homepage"><strong data-config="labName">L.L. Thurstone</strong><span>75TH ANNIVERSARY</span></a><p class="header-date" data-date>Saturday, June 19, 2027</p></div>
-    <nav id="navigation" class="wrap page-tabs" aria-label="Anniversary pages"><a href="index.html" aria-current="page">Home Page</a><a href="rsvp.html">RSVP</a><a href="guests.html">Who’s coming</a><a href="schedule.html">Schedule</a><a href="hotels.html">Hotels</a><a href="venue.html">Venue &amp; Parking</a><a href="photos.html">Photos</a></nav>
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html" aria-label="Anniversary homepage"><strong data-config="labName">L.L. Thurstone</strong><span>75TH ANNIVERSARY</span></a>
+      <div class="header-date">
+        <p><strong data-date>Saturday, June 19, 2027</strong></p>
+        <p id="event-countdown" hidden></p>
+      </div>
+    </div>
+    <nav id="navigation" class="wrap page-tabs" aria-label="Anniversary pages"><a href="index.html" aria-current="page">Home Page</a><a href="guests.html">Who’s coming</a><a href="schedule.html">Schedule</a><a href="hotels.html">Hotels</a><a href="venue.html">Venue &amp; Parking</a><a href="photos.html">Photos</a></nav>
   </header>
   <main id="main"><section class="information-section" aria-labelledby="page-title"><div class="wrap">
 <p class="hero-lab-name" data-config="labName">L.L. Thurstone</p>
 <h1 id="page-title" data-config="headline">75 Years and More…</h1>
-<p class="hero-description">Celebrate with alumni, current lab members, colleagues, and friends of L.L. Thurstone Lab.</p>
+<div id="rsvp" class="information-actions">
+  <a id="rsvp-link" class="button" hidden>RSVP</a>
+  <span id="rsvp-pending">RSVPs will open soon.</span>
+  <a class="text-link" href="guests.html">See who’s coming</a>
+</div>
+<p id="deadline-note" hidden></p>
+<p class="hero-description">Celebrate with alumni, current lab members, colleagues, and friends of the L.L. Thurstone Lab.</p>
 <div class="event-details"><div><p class="eyebrow">DATE & TIME</p><h2 data-date>Saturday, June 19, 2027</h2><p data-config="timeLabel">4:30–9:30 p.m. (Eastern)</p><small id="year-note" hidden>Year to be confirmed</small></div><div><p class="eyebrow">LOCATION</p><h2 data-config="room">Reeves Auditorium</h2><p data-config="venue">North Carolina Botanical Garden</p><p data-config="location">Chapel Hill, North Carolina</p><div class="venue-links"><a id="directions-link" class="text-link" href="https://www.google.com/maps/search/?api=1&amp;query=North+Carolina+Botanical+Garden+100+Old+Mason+Farm+Road+Chapel+Hill" target="_blank" rel="noopener noreferrer">Google Maps ↗</a><a class="text-link" href="venue.html">Venue & parking details →</a></div></div></div>
-<div class="information-actions"><a class="button" href="rsvp.html">RSVP <span aria-hidden="true">→</span></a><span>Your +1 is welcome.</span></div>
 <p class="overview-note">Find the program and latest announcements under <a href="schedule.html">Schedule</a>. Hotel information is forthcoming.</p>
 </div></section></main>
   <footer><div class="wrap"><div class="footer-main"><span><strong data-config="labName">L.L. Thurstone</strong> · 75th anniversary</span><span id="contact-text" hidden></span></div></div></footer>
