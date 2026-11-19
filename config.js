@@ -1,6 +1,6 @@
 /* EDIT EVENT DETAILS HERE. No build step is needed after changes. */
 window.EVENT_CONFIG = {
-  labName: 'L.L. Thurstone',
+  labName: 'L.L. Thurstone Lab',
   headline: '75 Years and More…',
   anniversary: 75,
   dateLabel: 'Saturday, June 19',
