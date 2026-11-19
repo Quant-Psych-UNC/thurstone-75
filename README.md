@@ -1,4 +1,4 @@
-# L.L. Thurstone · 75th Anniversary
+# L.L. Thurstone Lab · 75th Anniversary
 
 **75 Years and More…**
 
