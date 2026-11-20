@@ -53,23 +53,52 @@
     const months = 'January February March April May June July August September October November December'.split(' ');
     const month = months.indexOf(date[1]);
     const day = Number(date[2]);
-    const eventDay = Date.UTC(Number(config.year), month, day);
+    const year = Number(config.year);
+    const eventDay = Date.UTC(year, month, day);
     if (month < 0 || new Date(eventDay).getUTCDate() !== day) return;
 
-    const easternDate = new Intl.DateTimeFormat('en-US', {
-      timeZone: 'America/New_York', year: 'numeric', month: 'numeric', day: 'numeric'
-    });
+    // Read the start of the displayed time range, using its first a.m. or p.m.
+    const start = /^(\d{1,2}):(\d{2})/.exec(config.timeLabel?.trim());
+    const period = /([ap])\.m\./i.exec(config.timeLabel)?.[1].toLowerCase();
+    if (!start || !period) return;
+    const hour = Number(start[1]);
+    const minute = Number(start[2]);
+    if (hour < 1 || hour > 12 || minute > 59) return;
+
+    const timeZone = 'America/New_York';
+    const wallTime = new Date(Date.UTC(year, month, day, hour % 12 + (period === 'p' ? 12 : 0), minute));
+    const offset = new Intl.DateTimeFormat('en-US', { timeZone, timeZoneName: 'longOffset' })
+      .formatToParts(wallTime).find(part => part.type === 'timeZoneName').value.slice(3);
+    const startsAt = Date.parse(wallTime.toISOString().replace('Z', offset));
+    if (!Number.isFinite(startsAt)) return;
+
+    const easternDate = new Intl.DateTimeFormat('en-US', { timeZone, dateStyle: 'short' });
+    const celebrationDate = easternDate.format(startsAt);
     function updateCountdown() {
-      const today = Object.fromEntries(easternDate.formatToParts(new Date()).map(part => [part.type, part.value]));
-      // Subtract calendar dates so daylight-saving changes never shift the count.
-      const daysLeft = (eventDay - Date.UTC(today.year, today.month - 1, today.day)) / 86_400_000;
-      countdown.hidden = daysLeft < 0;
-      if (daysLeft < 0) return;
-      countdown.textContent = daysLeft === 0 ? 'Today’s the day' : `${daysLeft} ${daysLeft === 1 ? 'day' : 'days'} to go`;
+      const now = Date.now();
+      const secondsLeft = Math.ceil((startsAt - now) / 1000);
+      if (secondsLeft <= 0) {
+        countdown.hidden = easternDate.format(now) !== celebrationDate;
+        countdown.textContent = 'Today’s the day';
+        return;
+      }
+
+      countdown.textContent = [
+        Math.floor(secondsLeft / 86_400),
+        Math.floor(secondsLeft / 3600) % 24,
+        Math.floor(secondsLeft / 60) % 60,
+        secondsLeft % 60
+      ].map(value => String(value).padStart(2, '0')).join(':');
+      countdown.hidden = false;
     }
 
     updateCountdown();
-    if (!countdown.hidden) setInterval(updateCountdown, 60_000);
+    if (!countdown.hidden) {
+      const timer = setInterval(() => {
+        updateCountdown();
+        if (countdown.hidden) clearInterval(timer);
+      }, 1000);
+    }
   }
 
   function applyConfig() {

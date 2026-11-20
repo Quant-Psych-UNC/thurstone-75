@@ -15,7 +15,13 @@
 <body data-page="guests" data-page-title="Who’s coming">
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
-    <div class="wrap header-inner"><a class="brand" href="index.html" aria-label="Anniversary homepage"><strong data-config="labName">L.L. Thurstone</strong><span>75TH ANNIVERSARY</span></a><p class="header-date" data-date>Saturday, June 19, 2027</p></div>
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html" aria-label="Anniversary homepage"><strong data-config="labName">L.L. Thurstone</strong><span>75TH ANNIVERSARY</span></a>
+      <div class="header-date">
+        <p><strong data-date>Saturday, June 19, 2027</strong></p>
+        <p id="event-countdown" role="timer" aria-label="Time until the celebration in days, hours, minutes, and seconds" title="Days : Hours : Minutes : Seconds" hidden></p>
+      </div>
+    </div>
     <nav id="navigation" class="wrap page-tabs" aria-label="Anniversary pages"><a href="index.html">Home Page</a><a href="guests.html" aria-current="page">Who’s coming</a><a href="schedule.html">Schedule</a><a href="hotels.html">Hotels</a><a href="venue.html">Venue &amp; Parking</a><a href="photos.html">Photos</a></nav>
   </header>
   <main id="main">
