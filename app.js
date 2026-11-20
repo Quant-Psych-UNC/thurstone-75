@@ -178,7 +178,9 @@
         const initials = guest.name.trim().split(/\s+/).map(part => Array.from(part)[0]).slice(0, 2).join('').toLocaleUpperCase();
         const details = element('div');
         details.append(element('h3', 'guest-name', guest.name));
-        const meta = [guest.role, guest.years].filter(Boolean).join(' · ');
+        const years = guest.years?.trim() || '';
+        const yearLabel = /^\d{4}$/.test(years) ? `Joined ${years}` : years;
+        const meta = [guest.role, yearLabel].filter(Boolean).join(' · ');
         if (meta) details.append(element('p', 'guest-meta', meta));
         const avatar = element('span', 'guest-avatar', initials);
         avatar.setAttribute('aria-hidden', 'true');
