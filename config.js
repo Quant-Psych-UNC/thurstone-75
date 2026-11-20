@@ -29,7 +29,7 @@ window.EVENT_CONFIG = {
   // Paste the published responder link, NOT the Google Form editor or response sheet.
   rsvpFormUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSeh1LXnFf64G-BS_mdx9umVR2564xm0HFfNUNLVoSEiLUZZtA/viewform?usp=dialog',
   // Paste a Dropbox FILE REQUEST link: https://www.dropbox.com/request/...
-  dropboxRequestUrl: '',
+  dropboxRequestUrl: 'https://www.dropbox.com/scl/fo/5iixr1fipm6laip14kzmt/AIvbskD2QAheFK2r_wAig9E?rlkey=3nkm3i1njwnx5ov8rm0ujwpwh&st=bcd5sy98&dl=0',
   // Optional: view-only shared link to a SEPARATE folder of approved photos.
   photoGalleryUrl: '',
   // Public organizer contact address; never put a guest's email here.
