@@ -117,7 +117,7 @@
       $('#deadline-note').hidden = false;
     }
     if (config.contactEmail && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(config.contactEmail)) {
-      const link = element('a', 'text-link', 'Contact us ↗');
+      const link = element('a', 'text-link', 'Contact us');
       link.href = `mailto:${config.contactEmail}`;
       $('#contact-text').replaceChildren(link);
       $('#contact-text').hidden = false;

@@ -35,12 +35,10 @@ input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 2px
 .skip-link { position: fixed; z-index: 50; top: -100px; left: 20px; padding: 12px 20px; background: var(--navy); color: var(--white); }
 .skip-link:focus { top: 12px; }
 .eyebrow { font-size: var(--text-body); font-weight: 600; letter-spacing: .04em; }
-.button { display: inline-flex; align-items: center; justify-content: center; gap: 20px; min-height: 48px; padding: 12px 22px; border: 1px solid var(--navy); border-radius: 4px; background: var(--blue); color: var(--navy); font-size: var(--text-body); font-weight: 600; line-height: 1.5; }
-.button:hover { background: var(--navy); color: var(--white); }
-.button > span { font-size: inherit; }
-.button-outline { background: var(--white); }
+.button { display: inline-flex; align-items: center; justify-content: center; min-width: 112px; min-height: 48px; padding: 12px 22px; border: 1px solid var(--navy); border-radius: 4px; background: var(--navy); color: var(--white); font-size: var(--text-body); font-weight: 600; line-height: 1.5; text-align: center; }
+.button:hover { background: var(--blue); color: var(--navy); }
 .text-link { display: inline; border: 0; padding: 0; background: none; color: var(--navy); font-size: var(--text-body); font-weight: 600; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
-.text-link:hover, .overview-note a:hover { text-decoration-thickness: 2px; }
+.text-link:hover { text-decoration-thickness: 2px; }
 
 /* Persistent page navigation */
 .site-header { border-top: 4px solid var(--blue); border-bottom: 1px solid var(--pale); }
@@ -68,12 +66,9 @@ input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 2px
 .event-details small { display: block; margin-top: 8px; }
 .venue-links { display: flex; align-items: center; flex-wrap: wrap; gap: 16px 24px; margin-top: 16px; }
 .information-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 20px; margin-top: 24px; }
-.information-actions .button { min-width: 112px; background: var(--navy); color: var(--white); }
-.information-actions .button:hover { background: var(--blue); color: var(--navy); }
 .information-actions .text-link { display: inline-flex; align-items: center; min-height: 44px; }
 #deadline-note { margin-top: 12px; }
 .overview-note { margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--blue); }
-.overview-note a { text-decoration: underline; text-underline-offset: 4px; }
 
 /* Shared page structure */
 .page-content { padding-block: 48px 64px; }
