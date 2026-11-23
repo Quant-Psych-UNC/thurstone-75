@@ -3,7 +3,7 @@ window.EVENT_CONFIG = {
   labName: 'L.L. Thurstone Lab',
   headline: '75 Years and More…',
   anniversary: 75,
-  dateLabel: 'Saturday, June 19',
+  dateLabel: 'Saturday, June 12',
   year: '2027',
   timeLabel: '4:30–9:30 p.m. (Eastern)',
   reservationWindow: '4:00–10:00 p.m.',
@@ -24,7 +24,7 @@ window.EVENT_CONFIG = {
   ],
   // Add new organizer announcements here; newest entries first.
   updates: [
-    { title: 'Event date and venue confirmed', text: 'Join us Saturday, June 19, 2027, from 4:30–9:30 p.m. at Reeves Auditorium. The detailed program and hotel information will be added when available.' }
+    { title: 'Event date and venue confirmed', text: 'Join us Saturday, June 12, 2027, from 4:30–9:30 p.m. at Reeves Auditorium. The detailed program and hotel information will be added when available.' }
   ],
   // Paste the published responder link, NOT the Google Form editor or response sheet.
   rsvpFormUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSeh1LXnFf64G-BS_mdx9umVR2564xm0HFfNUNLVoSEiLUZZtA/viewform?usp=dialog',
